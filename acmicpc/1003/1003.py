@@ -1,7 +1,5 @@
-count1 = [0] * 40
-count0 = [0] * 40
-count0[0] =1;
-count1[1] =1;
+count1 = [0] * 41
+count0 = [0] * 41
 
 def fact_count(n):
 	if n<2:
