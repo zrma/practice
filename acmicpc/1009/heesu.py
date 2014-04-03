@@ -21,7 +21,7 @@ for dummy in range(n):
 # total num of cases are i + 1
 # b = 1 then answer is a[0] 
 # b = 2 then answer is a[1]
-# b = n then answer is a[j], where j = (b - 1) % (i +1)
+# b = n then answer is a[j], where j = (b - 1) % 4 
 
 	idx = (b - 1) % 4;
 	answer = result[idx]
