@@ -6,7 +6,7 @@ for dummy in range(n):
 	b = int(cmd[1])
 
 # store for result loop
-# fix by wonhyo, 5 is enogh size..
+# fix by wonhyo, 4 is enogh size..
 	result = [0] * 4
 	result[0] = a
 
