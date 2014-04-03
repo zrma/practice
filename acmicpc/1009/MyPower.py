@@ -15,4 +15,7 @@ for i in range(n):
 	ws = raw_input().split(" ")
 	a = int(ws[0])
 	b = int(ws[1])
-	print mypow(a,b)
+	ans = mypow(a,b)
+	if ans == 0:
+		ans = 10
+	print (ans)

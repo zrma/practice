@@ -1,19 +1,16 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
-
 	private static final int THR = 1000;
 	public static void main(String[] args) {
-		ArrayList <Integer>ans = new ArrayList<Integer>();
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
 		for( int i = 0; i < n; i++) {
 			int a = s.nextInt();
 			int b = s.nextInt();
-			ans.add(mypow(a,b));
+			int ans = mypow(a,b);
+			if(ans == 0) ans = 10;
+			System.out.println(mypow(a,b));
 		}
-		for (int i:ans)
-			System.out.println(i);
 		s.close();
 	}
 
