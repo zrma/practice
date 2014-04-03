@@ -6,17 +6,16 @@ for dummy in range(n):
 	b = int(cmd[1])
 
 # store for result loop
-	result = [0] * 10
+# fix by wonhyo, 5 is enogh size..
+	result = [0] * 4
 	result[0] = a
 
 
 # answer always makes loop pattern.
-# for example, if a = 3 --> 3, 6, 9, 2, 5, 8, 1, 4, 7, 0, 3, ...
-# Also, maximum loop size is 10 
-	i = 0
-	while result[i] * a % 10 != result[0]:
+# for example, if a = 3 --> 3, 9, 7, 1, 3
+# Also, maximum loop size is 4 
+	for i in range(3):
 		result[i+1] = result[i] * a % 10
-		i += 1
 
 # now we find all patterns
 # total num of cases are i + 1
@@ -24,7 +23,7 @@ for dummy in range(n):
 # b = 2 then answer is a[1]
 # b = n then answer is a[j], where j = (b - 1) % (i +1)
 
-	idx = (b - 1) % (i +1);
+	idx = (b - 1) % 4;
 	answer = result[idx]
 	if answer == 0: 
 		answer = 10
