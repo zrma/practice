@@ -1,4 +1,4 @@
-import math
+from math import pow
  
 class tr:
     def __init__(self, x, y, r):
@@ -7,9 +7,9 @@ class tr:
         self.r = r
  
 def check(t1, t2):    
-    rsum = math.pow(t1.r + t2.r, 2);
-    rsub = math.pow(t1.r - t2.r, 2);
-    dist = math.pow(t2.x - t1.x, 2) + math.pow(t2.y - t1.y, 2)
+    rsum = pow(t1.r + t2.r, 2);
+    rsub = pow(t1.r - t2.r, 2);
+    dist = pow(t2.x - t1.x, 2) + pow(t2.y - t1.y, 2)
     if dist == 0:
         if t1.r == t2.r:
             return -1
