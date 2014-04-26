@@ -8,13 +8,11 @@ for w in ws:
 		r[w] = 1
 
 sr = sorted(r.items(),key=r.get, reverse=True)
-print sorted(r.items(),key=r.get, reverse=True)
-
-
 print sr
+
 if len(sr) == 1:
 	print sr[0][0]
-elif sr[0][1] == sr[1][1]:
+elif sr[0][0] == sr[1][1]:
 	print "?"
 else:
 	print sr[0][0]

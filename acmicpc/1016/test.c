@@ -15,16 +15,10 @@ int checkNoNo(LL num,LL* test,int length) {
 
 LL findNoNo(LL min, LL max,LL *test, int length) {	
 	LL count = 0;
-	while (max >= min) {
-		if (checkNoNo(min, test, length)) {
-			count ++;
-			//printf("%lld ",min);
-		}
-		min++;
-	}
+	for (; max >= min; min++)
+		count += checkNoNo(min, test, length);
 	return count;
 }
-
 
 void close_test(LL **test) {
 	free(*test);
@@ -33,7 +27,7 @@ void close_test(LL **test) {
 
 int set_test(LL **test) {
 	int count;
-	LL *full =  (LL *) calloc(TMAX, sizeof(LL));
+	LL *full =  (LL *) malloc(TMAX * sizeof(LL));
 
 	//fill
 	for (int i = 2; i < TMAX; i++) {		
@@ -55,7 +49,7 @@ int set_test(LL **test) {
 		if (full[i] != -1) count++;
 		
 	//remap num 
-	*test = calloc(count, sizeof(LL));
+	*test = malloc(count * sizeof(LL));
 	for (int i = 0, idx = 0; i < TMAX; i++) {
 		if (full[i] != -1)  {
 			(*test)[idx] = full[i];
@@ -66,7 +60,6 @@ int set_test(LL **test) {
 	return count;
 }
 
-
 int main(void) {
 	LL min, max, result;
 	LL *test;
@@ -74,7 +67,7 @@ int main(void) {
 	scanf("%lld %lld", &min, &max);
 	length = set_test(&test);
 	result = findNoNo(min, max, test, length);
-	printf("result: %lld\n",result);
+	printf("%lld\n",result);
 	close_test(&test);
 	return 0;
 }
