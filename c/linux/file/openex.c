@@ -35,5 +35,6 @@ int main(int argc, char* argv[]) {
 		write(1,buf,ret);
 	}
 
+	close(fd);
 	return 0;
 }
