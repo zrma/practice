@@ -11,11 +11,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Person *p = [[Person alloc] init];
-        [p setHeightInMeters:1.72];
-        [p setWeighitInKilos:75];
         
-        NSLog(@"MY BMI %f", [p bodyMassIndex]);
     }
     return 0;
 }
