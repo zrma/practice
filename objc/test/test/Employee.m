@@ -29,4 +29,9 @@
     return sum;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"emp id: %d, $%d",[self employeeID], [self valueOfAssets]];
+}
+
 @end

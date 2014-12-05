@@ -7,11 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Person.h"
+#import "Employee.h"
+#import "Asset.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        NSMutableArray *employees = [[NSMutableArray alloc]init];
         
+        //generate 10 emp
+        for (int i = 0 ; i < 10; i++) {
+            Employee *e = [[Employee alloc] init];
+            [e setWeighitInKilos:45 + i];
+            [e setHeightInMeters:1.8 - i/10.0];
+            [e setEmployeeID:i];
+            
+            //add e into array
+            [employees addObject:e];
+        }
+        
+        //generate 10 assets
+        for (int i = 0; i < 10; i++) {
+            Asset *a = [[Asset alloc] init];
+            [a setLabel:[NSString stringWithFormat:@"Laptop %d",i]];
+            [a setResaleValue:i * 13];
+            
+            NSUInteger random_index = random() % [employees count];
+            Employee *any = [employees objectAtIndex:random_index];
+            [any addAssetsObject:a];
+            
+        }
+        NSLog(@"Emp %@", employees);
+            
     }
     return 0;
 }
