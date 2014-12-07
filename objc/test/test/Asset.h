@@ -11,7 +11,7 @@
 @interface Asset : NSObject
 {
     NSString *label;
-    Employee *holder;
+    __weak Employee *holder;
     unsigned int resaleValue;
 }
 

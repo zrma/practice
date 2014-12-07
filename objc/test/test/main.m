@@ -25,6 +25,8 @@ int main(int argc, const char * argv[]) {
             [employees addObject:e];
         }
         
+        NSMutableArray *allAssets = [[NSMutableArray alloc] init];
+        
         //generate 10 assets
         for (int i = 0; i < 10; i++) {
             Asset *a = [[Asset alloc] init];
@@ -35,6 +37,8 @@ int main(int argc, const char * argv[]) {
             Employee *any = [employees objectAtIndex:random_index];
             [any addAssetsObject:a];
             
+            [allAssets addObject:a];
+            
         }
         NSLog(@"Emp %@", employees);
         
@@ -42,8 +46,8 @@ int main(int argc, const char * argv[]) {
         [employees removeObjectAtIndex:5];
         NSLog(@"Giving up ownership of all emp");
         employees = nil;
+        allAssets = nil;
     }
     sleep(100);
-    NSLog(@"Main end");
     return 0;
 }
