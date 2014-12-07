@@ -16,6 +16,6 @@
 }
 
 @property (strong) NSString *label;
-@property (strong) Employee *holder;
+@property (weak) Employee *holder;
 @property unsigned int resaleValue;
 @end

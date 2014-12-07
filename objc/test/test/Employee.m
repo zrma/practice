@@ -18,6 +18,7 @@
         assets = [[NSMutableArray alloc] init];
     }
     [assets addObject:a];
+    [a setHolder:self];
 }
         
 - (unsigned int) valueOfAssets
@@ -31,7 +32,11 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"emp id: %d, $%d",[self employeeID], [self valueOfAssets]];
+    return [NSString stringWithFormat:@"emp id: %d, has %lu items",[self employeeID], [assets count]];
 }
 
+- (void) dealloc
+{
+    NSLog(@"deallocating %@", self);
+}
 @end

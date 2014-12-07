@@ -37,7 +37,13 @@ int main(int argc, const char * argv[]) {
             
         }
         NSLog(@"Emp %@", employees);
-            
+        
+        NSLog(@"Giving up ownership of one emp");
+        [employees removeObjectAtIndex:5];
+        NSLog(@"Giving up ownership of all emp");
+        employees = nil;
     }
+    sleep(100);
+    NSLog(@"Main end");
     return 0;
 }
