@@ -40,10 +40,21 @@ int main(int argc, const char * argv[]) {
             [allAssets addObject:a];
             
         }
-        NSLog(@"Emp %@", employees);
-        
+        //sort
+        NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueOfAssets" ascending:YES];
+        NSSortDescriptor *ei = [NSSortDescriptor sortDescriptorWithKey:@"employeeID" ascending:YES];
+        [employees sortUsingDescriptors:[NSArray arrayWithObjects: voa, ei, nil]];
+        NSLog(@"all employees: %@", employees);
+    
         NSLog(@"Giving up ownership of one emp");
         [employees removeObjectAtIndex:5];
+        
+        NSLog(@"allAssets: %@", allAssets);
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 70"];
+        NSArray *tobeReclaimed = [allAssets filteredArrayUsingPredicate:predicate];
+        NSLog(@"toBoeReclamed: %@", tobeReclaimed);
+        tobeReclaimed = nil;
+        
         NSLog(@"Giving up ownership of all emp");
         employees = nil;
         allAssets = nil;

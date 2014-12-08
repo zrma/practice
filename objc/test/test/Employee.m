@@ -32,7 +32,8 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"emp id: %d, has %lu items",[self employeeID], [assets count]];
+    return [NSString stringWithFormat:@"eid: %d, items: %lu, price: %d",[self employeeID],
+            [assets count], [self valueOfAssets]];
 }
 
 - (void) dealloc

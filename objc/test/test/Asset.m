@@ -9,7 +9,7 @@
 #import "Asset.h"
 @class Employee;
 @implementation Asset
-@synthesize label, resaleValue;
+@synthesize label, resaleValue, holder;
 - (NSString *) description
 {
     if([self holder]) {
