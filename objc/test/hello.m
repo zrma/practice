@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
 
-
-int main(void) {
+int main(int argc, char *argv[]) {
 	@autoreleasepool {
-	NSLog(@"Hello, world");
+		NSLog(@"Hello, world");
 	}
 	return 0;
 }
