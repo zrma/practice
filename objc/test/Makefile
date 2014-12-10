@@ -1,8 +1,9 @@
 CFLAGS=-framework Foundation
-all: hello
 
+all: file hello 
+file: file.m
+	gcc $(CFLAGS) -o $@ $^
 hello: hello.m
 	gcc $(CFLAGS) -o $@ $^
-
 clean:
-	rm -f *.o hello
+	rm -f *.o file hello

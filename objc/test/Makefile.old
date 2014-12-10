@@ -1,7 +1,0 @@
-CFLAGS=-framework Foundation
-all: hello
-hello: hello.m
-	gcc $(CFLAGS) -o hello hello.m
-
-clean:
-	rm -f *.o hello
